@@ -1,0 +1,66 @@
+
+
+header {
+  margin-top: 100px;
+}
+
+img {
+    display: block;
+    margin: auto;
+}
+
+h1, h2, ul, form {
+  text-align: center;
+}
+
+.js-query {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  width: 30%;
+  border-radius: 10px;
+}
+
+ul {
+  text-decoration: none;
+}
+
+li {
+  display: inline-block;
+}
+
+button {
+  margin-top: 10px;
+}
+
+.nav-border {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.row {
+  display: flex;
+}
+
+.display-results, .display-map {
+  display: flex;
+  flex-direction: column;
+  width: 50%
+}
+
+.display-results {
+  background-color: blue;
+}
+
+.display-map {
+  background-color: red;
+
+}
+
+
+
+
