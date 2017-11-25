@@ -12,23 +12,22 @@
 
 <body>
 
-<div class="container">
-    <header role="banner">
+    <header role="banner" class="row">
       <a href="index.html"><img src="images/coffee.png" alt="Coffee mug containing hot coffee" class="coffee-icon"></a>
       <h1>Caf&eacute; Cubano</h1>
     </header>
 
-    <main role="main">
-      <h2>Find Cuban Coffee in Your Area</h2>
-      <form action="#" class="js-search-form" role="form">
-              <label for="query"></label>
-              <input type="text" class="js-query" placeholder="Enter a zip code" pattern="[0-9]{5}">
-              <button type="submit">Find Coffee</button>
-      </form>
-    </main>
+ <div class="row">
+
+  <div class="display-results">
+
+  </div>
+
+  <div class="display-map">
+
 
     <footer>
-      <nav role="navigation">
+      <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li class="nav-border"><a href="what-is-cuban-coffee.html">What is Cuban Coffee?</a></li>
@@ -36,11 +35,10 @@
         </ul>
       </nav>
     </footer>
-
-</div>
+  </div>
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/results.js"></script>
 </body>
 </html>

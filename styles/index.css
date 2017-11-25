@@ -1,7 +1,11 @@
-
+body {
+  width: 90%;
+  margin: 0 auto;
+}
 
 header {
-  margin-top: 100px;
+  margin: 100px auto 12px auto;
+  justify-content: center;
 }
 
 img {
@@ -9,9 +13,10 @@ img {
     margin: auto;
 }
 
-h1, h2, ul, form {
+.container {
   text-align: center;
 }
+
 
 .js-query {
   display: block;
@@ -53,11 +58,11 @@ button {
 }
 
 .display-results {
-  background-color: blue;
+
 }
 
 .display-map {
-  background-color: red;
+
 
 }
 
