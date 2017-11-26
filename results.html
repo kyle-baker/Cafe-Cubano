@@ -7,38 +7,45 @@
   <meta name="description" content="A web application to help locate the nearest source of Cuban Coffee">
   <title>Caf&eacute; Cubano</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700|EB+Garamond:400,400i,500" rel="stylesheet">
   <link href="styles/index.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 
-    <header role="banner" class="row">
+    <header role="banner" class="row header-results">
       <a href="index.html"><img src="images/coffee.png" alt="Coffee mug containing hot coffee" class="coffee-icon"></a>
-      <h1>Caf&eacute; Cubano</h1>
+      <h1 class='horizontal'> Caf&eacute; Cubano</h1>
+
     </header>
 
- <div class="row">
+ <div class="row main-container">
 
   <div class="display-results">
 
   </div>
 
   <div class="display-map">
+    <p class='search-information'>Displaying locations near <span class="searched-query"></span></p>
+    <div id="map">
+    </div>
 
-
-    <footer>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li class="nav-border"><a href="what-is-cuban-coffee.html">What is Cuban Coffee?</a></li>
-          <li><a href="make-your-own.html">Make Your Own?</a></li>
-        </ul>
-      </nav>
-    </footer>
+      <footer>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="nav-border"><a href="what-is-cuban-coffee.html">What is Cuban Coffee?</a></li>
+            <li><a href="make-your-own.html">Make Your Own?</a></li>
+          </ul>
+        </nav>
+      </footer>
   </div>
+</div>
+
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqH0ESVrAD0moTbonyfiPuIGuZg_4HJ9c"></script>
   <script src="js/results.js"></script>
 </body>
 </html>

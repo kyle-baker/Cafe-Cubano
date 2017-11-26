@@ -25,7 +25,6 @@ function getDataFromFourSquareApi(searchTerm, callback) {
 
 
 function storeSearchData(data) {
-  console.log("called storeSearchData");
   const resultsAsString = JSON.stringify(data.response.venues);
   localStorage.setItem('results', resultsAsString);
   window.location.href="results.html";
@@ -38,6 +37,9 @@ function storeSearchData(data) {
         event.preventDefault();
         const queryTarget = $(event.currentTarget).find('.js-query');
         const query = queryTarget.val();
+        //Store query to display on results page
+        const queryAsString = JSON.stringify(query);
+        localStorage.setItem('query', queryAsString);
         //clear out the input
         queryTarget.val("");
         getDataFromFourSquareApi(query, storeSearchData);
