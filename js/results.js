@@ -1,20 +1,20 @@
-
-//Goals
-//  - Center map on first result. Add markers for all results
-
 //Declare Variables 
 let map;
-
-
+let markerLabels = 'ABCDEFGHIJ';
+let currentMarker = 0;
 //Functions
 function retrieveSearchData() {
   let retrievedStringResults = localStorage.getItem('results');
   let data = JSON.parse(retrievedStringResults);
-  let coordinates = populateCordinatesArray(data);
   const results = data.map(item => {
+    item.markerLabel = markerLabels[currentMarker]
+    currentMarker++;
     return displaySearchResults(item);
   });
+  $('.display-results').prop('hidden', false);
   $('.display-results').html(results);
+  let coordinates = populateCordinatesArray(data);
+  retreiveQueryValue();
   initMap(coordinates);
 }
 
@@ -22,9 +22,9 @@ function populateCordinatesArray(data) {
   let coordinates = [];
   data.map(item => {
     coordinates.push({
-      name: item.name,
       lat: item.location.lat,
-      lng: item.location.lng
+      lng: item.location.lng,
+      label: item.markerLabel
     });
   });
   return coordinates;
@@ -37,45 +37,46 @@ function retreiveQueryValue() {
 
 function displaySearchResults(result) {
   return `
-  <h3 class="result-name">${result.name}</h3>
-  <p class="result-address">${result.location.formattedAddress}</p>
-  `;
+    <div class="result-display">
+    <h3 class="result-name">${result.markerLabel} - ${result.name}</h3>
+    <p class="result-address">${result.location.formattedAddress}</p>
+    </div>
+    `;
 }
 
 function initMap(coordinates) {
 
   let geocoder = new google.maps.Geocoder();
-  var address = localStorage.getItem('query');
+  let address = localStorage.getItem('query');
 
   geocoder.geocode({'address': address}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       lat = results[0].geometry.location.lat();
       lng = results[0].geometry.location.lng();
-      map = new google.maps.Map(document.getElementById('map'), {
+      drawMap(lat, lng, coordinates);
+
+    } else {
+        drawMap(coordinates[0].lat, coordinates[0].lng, coordinates);
+      };
+  });
+}
+
+function drawMap(lat, lng, coordinates) {
+ map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: lat, lng: lng},
         zoom: 10
       });
       coordinates.map(item => {
         let marker = new google.maps.Marker({
           position: {lat: item.lat , lng: item.lng},
-          title: item.name,
           animation: google.maps.Animation.DROP,
-          map: map
+          map: map,
+          label: item.label
         });
       });        
-      console.log("FOUND");
-      console.log("Lat is " + lat + " and long is " + lng);
-    } else {
-      alert("Geocode was not successful for the following reason: " + status);
-      // map = new google.maps.Map(document.getElementById('map'), {
-      // center: {lat: coordinates[0].lat, lng: coordinates[0].lng},
-      // zoom: 12
-      }
-  });
-}
+}     
 
 //Call Functions
 $(function () {
   retrieveSearchData();
-  retreiveQueryValue();
-})
+});

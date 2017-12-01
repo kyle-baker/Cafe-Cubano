@@ -2,8 +2,8 @@
   box-sizing: border-box;
 }
 
-a:visited {
-    color: blue;
+a {
+  color: black;
 }
 
 footer {
@@ -28,6 +28,26 @@ header {
 
 .header-results {
   margin: 25px auto 30px auto;
+
+}
+
+.result-display {
+  background: #F5F5DC;
+  margin: 5px;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.result-name, .result-address {
+  padding-left: 20px;
+}
+
+.result-name {
+  margin-top: 10px;
+}
+
+.result-address {
+  padding-bottom: 5px;
 }
 
 h1 {
@@ -58,7 +78,7 @@ h3 {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
+  margin-top: 40px;
   width: 30%;
   border-radius: 10px;
   padding: 5px 0px 5px 10px;
@@ -73,7 +93,7 @@ li {
 }
 
 button {
-  margin-top: 15px;
+  margin-top: 20px;
   padding: 5px 10px 5px 10px;
   border-radius: 3px;
 }
