@@ -2,6 +2,7 @@
 let map;
 let markerLabels = 'ABCDEFGHIJ';
 let currentMarker = 0;
+
 //Functions
 function retrieveSearchData() {
   let retrievedStringResults = localStorage.getItem('results');
@@ -30,6 +31,7 @@ function populateCordinatesArray(data) {
   return coordinates;
 }
 
+//Display query user entered
 function retreiveQueryValue() {
   let query = localStorage.getItem('query');
   $('.searched-query').html(query);
@@ -41,20 +43,19 @@ function displaySearchResults(result) {
     <h3 class="result-name"><span class="marker-label">${result.markerLabel}</span> - ${result.name}</h3>
     <p class="result-address">${result.location.formattedAddress}</p>
     </div>
-    `;
+  `;
 }
 
 function initMap(coordinates) {
-
   let geocoder = new google.maps.Geocoder();
   let address = localStorage.getItem('query');
-
+  //Use Geocoder to determine the lattitude and longitude of user query
   geocoder.geocode({'address': address}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       lat = results[0].geometry.location.lat();
       lng = results[0].geometry.location.lng();
       drawMap(lat, lng, coordinates);
-
+  // If Geocoder fails, use lattitude and longitude of first search result
     } else {
         drawMap(coordinates[0].lat, coordinates[0].lng, coordinates);
       };

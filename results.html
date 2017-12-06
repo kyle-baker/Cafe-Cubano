@@ -13,22 +13,20 @@
 
 <body>
 
-    <header role="banner" class="row header-results">
-      <a href="index.html"><img src="images/coffee.png" alt="Coffee mug containing hot coffee" class="coffee-icon"></a>
-      <h1 class='horizontal'> Caf&eacute; Cubano</h1>
+  <header role="banner" class="row header-results">
+    <a href="index.html"><img src="images/coffee.png" alt="Coffee mug containing hot coffee" class="coffee-icon"></a>
+    <h1 class='horizontal'> Caf&eacute; Cubano</h1>
+  </header>
 
-    </header>
+  <div class="row main-container">
 
- <div class="row main-container">
-
-  <div class="display-results" aria-live="assertive" hidden>
-
-  </div>
-
-  <div class="display-map">
-    <p class='search-information'>Displaying locations near <span class="searched-query"></span></p>
-    <div id="map">
+    <div class="display-results" aria-live="assertive" hidden>
     </div>
+
+    <div class="display-map">
+      <p class='search-information'>Displaying locations near <span class="searched-query"></span></p>
+      <div id="map">
+      </div>
 
       <footer>
         <nav role="navigation">
@@ -38,10 +36,8 @@
           </ul>
         </nav>
       </footer>
+    </div>
   </div>
-</div>
-
-
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqH0ESVrAD0moTbonyfiPuIGuZg_4HJ9c"></script>

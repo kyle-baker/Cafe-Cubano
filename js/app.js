@@ -2,7 +2,6 @@
 const FOURSQUARE_SEARCH_URL = 'https://api.foursquare.com/v2/venues/search'
 
 // Functions
-
 function getDataFromFourSquareApi(searchTerm, callback) {
   const settings = {
     url: FOURSQUARE_SEARCH_URL,
@@ -19,7 +18,6 @@ function getDataFromFourSquareApi(searchTerm, callback) {
     success: callback,
     type: 'GET',
   };
-
   $.ajax(settings);
 }
 
@@ -32,21 +30,19 @@ function storeSearchData(data) {
 
 
 // Event Listeners 
-  function watchSubmit() {
-    $('.js-search-form').submit(event => {
-        event.preventDefault();
-        const queryTarget = $(event.currentTarget).find('.js-query');
-        const query = queryTarget.val();
-        //Store query to display on results page
-        const queryAsString = JSON.stringify(query);
-        localStorage.setItem('query', queryAsString);
-        //clear out the input
-        queryTarget.val("");
-        getDataFromFourSquareApi(query, storeSearchData);
-      });
-
-  }
-
+function watchSubmit() {
+  $('.js-search-form').submit(event => {
+    event.preventDefault();
+    const queryTarget = $(event.currentTarget).find('.js-query');
+    const query = queryTarget.val();
+    //Store query to display on results page
+    const queryAsString = JSON.stringify(query);
+    localStorage.setItem('query', queryAsString);
+    //Clear out the input
+    queryTarget.val("");
+    getDataFromFourSquareApi(query, storeSearchData);
+  });
+}
 
 // Call Functions
 $(watchSubmit);

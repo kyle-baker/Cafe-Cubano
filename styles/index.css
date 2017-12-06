@@ -2,14 +2,6 @@
   box-sizing: border-box;
 }
 
-a {
-  color: black;
-}
-
-footer {
-  text-align: center;
-}
-
 body {
   width: 90%;
   margin: 0 auto;
@@ -21,6 +13,10 @@ body {
       )
 }
 
+a {
+  color: black;
+}
+
 header {
   margin: 100px auto 30px auto;
   justify-content: center;
@@ -30,26 +26,15 @@ header {
   margin: 25px auto 30px auto;
 }
 
+footer {
+  text-align: center;
+}
+
 .result-display {
   background: #FCF4E5;
   border-radius: 30px;
   margin-bottom: 10px;
   padding: 5px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.content-wrapper {
-  background: #FCF4E5;
-  border-radius: 30px;
-  margin-bottom: 10px;
-  padding: 5px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.content {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -66,6 +51,21 @@ header {
 
 .result-address {
   padding-bottom: 5px;
+}
+
+.content-wrapper {
+  background: #FCF4E5;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .coffee-type {
@@ -96,8 +96,8 @@ h3 {
 }
 
 .coffee-icon {
-    display: block;
-    margin: auto;
+  display: block;
+  margin: auto;
 }
 
 .container {
@@ -164,44 +164,40 @@ button {
   margin-bottom: 75px;
 }
   
-
-
 @media (min-width: 320px) and (max-width: 1000px) {
   .row {
-  display: flex;
-  flex-direction: column-reverse;
+    display: flex;
+    flex-direction: column-reverse;
   }
 
   .display-results, .display-map {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
   }
 
   .header-results {
-  margin: 25px auto 30px auto;
-  display: flex;
-  flex-direction: row;
+    margin: 25px auto 30px auto;
+    display: flex;
+    flex-direction: row;
   }
 
   .horizontal {
-  font-size: 3.0em;
+    font-size: 3.0em;
   }
 
   #map {
-  height: 400px;
-  width: 100%;
+    height: 400px;
+    width: 100%;
   }
 
   .content-wrapper {
-  width: 95%;
+    width: 95%;
   }
-
- }
+}
 
 @media (min-width: 1001px) and (max-width: 1200px) { 
-
   .display-results, .display-map {
     display: flex;
     flex-direction: column;
@@ -219,12 +215,11 @@ button {
   }
 
   .content-wrapper {
-  width: 70%;
+    width: 70%;
   }
- } 
+} 
 
 @media (min-width: 1201px) { 
-
   .display-results, .display-map {
     display: flex;
     flex-direction: column;
@@ -241,7 +236,7 @@ button {
   }
 
   .content-wrapper {
-  width: 800px;
+    width: 800px;
   }
 }
 
