@@ -1,5 +1,5 @@
 # Café Cubano
-A simple application that allows users to search for buisnesses that serve Cuban Coffee. To start a search, the user must enter a valid U.S zip code. Once a zip code is entered the application will display a list of results in the area. The locations are retrieved via Foursquare's API and displayed in Google Maps.  
+A simple application that allows users to search for businesses that serve Cuban Coffee. To start a search, the user must enter a valid U.S zip code. Once a zip code is entered the application will display a list of results in the area. The locations are retrieved via Foursquare's API and displayed in Google Maps.  
 
 Try it [here](https://kyle-baker.github.io/Cafe-Cubano/).
 
