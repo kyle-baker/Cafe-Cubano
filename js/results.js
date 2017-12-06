@@ -38,7 +38,7 @@ function retreiveQueryValue() {
 function displaySearchResults(result) {
   return `
     <div class="result-display">
-    <h3 class="result-name">${result.markerLabel} - ${result.name}</h3>
+    <h3 class="result-name"><span class="marker-label">${result.markerLabel}</span> - ${result.name}</h3>
     <p class="result-address">${result.location.formattedAddress}</p>
     </div>
     `;
